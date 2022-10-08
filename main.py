@@ -1,14 +1,13 @@
 from flask.cli import FlaskGroup
 
-from project import app, db
+from project import create_app, db
 
-
+app = create_app()
 cli = FlaskGroup(app)
 
 
 @cli.command("create_db")
 def create_db():
-    db.drop_all()
     db.create_all()
     db.session.commit()
 
