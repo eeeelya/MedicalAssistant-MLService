@@ -8,3 +8,4 @@ SOURCES_BUCKET = os.environ.get("SOURCES_BUCKET")
 MODELS_BUCKET = os.environ.get("MODELS_BUCKET")
 
 MONGODB_URI = os.environ.get("MONGODB_URI")
+MONGODB_DATABASE = os.environ.get("MONGODB_DATABASE")
