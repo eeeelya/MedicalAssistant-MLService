@@ -7,7 +7,7 @@ import PIL.Image
 import boto3
 import botocore.exceptions
 
-from project.config import AWS_KEY, AWS_SECRET_KEY, AWS_REGION, SOURCES_BUCKET
+from service.config import AWS_KEY, AWS_SECRET_KEY, AWS_REGION, SOURCES_BUCKET
 
 
 class SegmentationPreprocessing:
