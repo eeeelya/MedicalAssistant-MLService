@@ -11,7 +11,6 @@ OPTIONS = {
 views = Blueprint("views", __name__)
 
 
-@views.route("/start_launch", methods=["POST"])
 def results():
     if request.method == "POST":
         try:
@@ -31,19 +30,18 @@ def results():
         return make_response(jsonify(result), 200)
 
 
-# @views.route("/history", methods=["GET"])
-# def records():
-#     all_launches = LaunchModel.query.order_by(LaunchModel.id)
-#     data = [
-#         {
-#             "id": launch.id,
-#             "model": launch.model,
-#             "date": launch.date,
-#             "image_name": launch.image_name,
-#             "image_height": launch.image_height,
-#             "image_width": launch.image_width,
-#             "success": launch.success,
-#         }
-#         for launch in all_launches.all()
-#     ]
-#     return make_response(data, 200)
+def records():
+    all_launches = LaunchModel.query.order_by(LaunchModel.id)
+    data = [
+        {
+            "id": launch.id,
+            "model": launch.model,
+            "date": launch.date,
+            "image_name": launch.image_name,
+            "image_height": launch.image_height,
+            "image_width": launch.image_width,
+            "success": launch.success,
+        }
+        for launch in all_launches.all()
+    ]
+    return make_response(data, 200)

@@ -1,16 +1,5 @@
-from flask.cli import FlaskGroup
-
-from project import create_app, db
-
-app = create_app()
-cli = FlaskGroup(app)
-
-
-@cli.command("create_db")
-def create_db():
-    db.create_all()
-    db.session.commit()
+from service import app
 
 
 if __name__ == "__main__":
-    cli()
+    app.run(host="0.0.0.0", port=5000)
