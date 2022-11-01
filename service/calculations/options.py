@@ -2,8 +2,8 @@ import json
 import numpy as np
 import botocore.exceptions
 
-from .preprocessing import SegmentationPreprocessing
-from .utils import create_launch, start_segmentation, save_results
+from service.calculations.preprocessing import SegmentationPreprocessing
+from service.calculations.utils import start_segmentation, save_results
 
 
 def segmentation(request_data):
